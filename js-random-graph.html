@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+
+<canvas id="myCanvas" width="500" height="500" style="border:1px solid #c3c3c3;padding:10px">
+Your browser does not support the canvas element.
+</canvas>
+
+<script type="text/javascript">
+
+var c=document.getElementById("myCanvas");
+var cxt=c.getContext("2d");
+cxt.moveTo(0,0);
+cxt.lineTo(0,500);
+cxt.lineTo(500,500);
+cxt.stroke();
+var bars = new Array();
+bars[1] = "sfasdasd";
+for (i=0;i<1000;i++)
+{
+bars[i] = 0;
+}
+function drawnew(){
+//for(i=0;i<10000;i++){
+var r = Math.floor(1000*Math.random());
+cxt.moveTo(r,500-bars[r]*2-2);
+cxt.lineTo(r+1,500-bars[r]*2-2);
+bars[r]+=3;
+cxt.stroke();
+if(bars[i%1000] < 10)
+var t=setTimeout("drawnew()",0.1);
+}
+drawnew(); 
+</script>
+
+</body>
+</html>
+
